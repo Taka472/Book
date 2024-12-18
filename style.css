@@ -28,7 +28,7 @@ body {
     width: 100%;
     height: 100%;
     min-height: 100%;
-    overflow-x: visible;
+    overflow-x: none;
 }
 
 /* Ensure the star field stretches with the page */
@@ -254,62 +254,100 @@ nav a:hover {
     text-align: justify;
     min-height: 100vh;
     width: 100%;
-    margin-left: 60px;
     background: none;
     text-align: center;
 }
 
-/* Make the title smaller and more readable on mobile devices */
-@media (max-width: 768px) {
-    #hero h1 {
-        font-size: 2em; 
-    }
-
-    #hero p {
-        font-size: 1.2em;
-    }
-
-    #hero button {
-        padding: 12px 20px;
-    }
-
-    #about h2 {
-        font-size: 2em;
-    }
-
-    #about p {
-        font-size: 1.1em;
-    }
-}
-
 @media (max-width: 768px) {
     nav ul {
-        display: none; /* Hide the menu links by default */
-        width: 100%;
-        text-align: center;
+        display: none; /* Hide the menu by default */
         flex-direction: column;
-        padding: 20px 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
         position: absolute;
-        top: 60px; /* Adjust position below the navbar */
+        top: 60px; /* Ensure the menu is positioned below the navbar */
         left: 0;
-        background-color: rgba(0, 0, 0, 0.9); /* Dark background when expanded */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        padding: 20px 0;
+        text-align: center;
     }
 
     nav ul.active {
-        display: block; /* Show the menu links when active */
+        display: flex; /* Show menu when active */
     }
 
+    /* Adjust nav links on mobile */
     nav li {
         margin: 10px 0;
     }
 
-    nav .logo {
-        font-size: 1.5em;
+    .menu-icon {
+        display: block; /* Show the hamburger menu */
+        padding-right: 0.75em;
     }
 
-    /* Show the hamburger icon */
-    .menu-icon {
-        display: block;
+    /* Smaller logo for mobile */
+    nav .logo a {
+        font-size: 1.5em;
+        padding: 0px;
+    }
+
+    nav a {
+        padding: 12px 1em;
+        font-size: 1.1em;
+    }
+
+    #newsletter {
+        padding: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5em; /* Make it smaller on mobile */
+    }
+
+    #hero p {
+        font-size: 1.1em;
+    }
+
+    #hero button {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #about {
+        margin: 0px;
+        padding: 30px 1.5em;
+        width: 100%;
+    }
+
+    #about h2, #books h2 {
+        font-size: 2em;
+    }
+
+    #about p, #books p {
+        font-size: 1.1em;
+    }
+
+    .book-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        gap: 15px;
+    }
+
+    .book-item h3 {
+        font-size: 1em;
+    }
+
+    #books {
+        margin: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .book-cover-container {
+        width: 150px;  /* Smaller size for mobile */
+        height: 150px;
     }
 }
