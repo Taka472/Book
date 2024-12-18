@@ -350,4 +350,10 @@ nav a:hover {
         width: 150px;  /* Smaller size for mobile */
         height: 150px;
     }
+
+    .book-cover {
+        width: 60%;
+        height: 100%;
+        object-fit: cover;  /* Keep the image covering the container */
+    }
 }
