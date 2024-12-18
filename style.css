@@ -283,7 +283,7 @@ nav a:hover {
 
     .menu-icon {
         display: block; /* Show the hamburger menu */
-        padding-right: 0.75em;
+        padding-right: 0.75vw;
     }
 
     /* Smaller logo for mobile */
