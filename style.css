@@ -80,7 +80,7 @@ body {
 }
 
 /* Button styling */
-#hero button {
+#hero button, #about button {
     padding: 15px 30px;
     background-color: #ff4c00;
     color: white;
@@ -90,11 +90,11 @@ body {
     cursor: pointer;
 }
 
-#hero button:hover {
+#hero button:hover, #about button:hover {
     background-color: #e03a00;
 }
 
-#hero button a {
+#hero button a, #about button a {
     text-decoration: none;
     color: white;
 }
@@ -227,7 +227,7 @@ nav a:hover {
 
 /* Book Cover Image */
 .book-cover {
-    width: 150px;
+    width: 160px;
     height: 256px;
     object-fit: cover;
 }

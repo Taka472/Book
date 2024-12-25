@@ -1,4 +1,6 @@
 const starfield = document.getElementById("starfield");
+const authorID = 'sthshadowhart';
+const book1ID = 'B0DRF6FCWC';
 
 function createStars() {
     const numberOfStars = 300; // Adjust the number of stars
@@ -64,3 +66,55 @@ navs.forEach(link => {
         });
     });
 });
+
+function redirectToMarketplace() {
+    const marketplaceUrls = {
+        "US": "https://www.amazon.com/dp/" + book1ID,
+        "CA": "https://www.amazon.ca/dp/" + book1ID,
+        "UK": "https://www.amazon.co.uk/dp/" + book1ID,
+        "DE": "https://www.amazon.de/dp/" + book1ID,
+        "FR": "https://www.amazon.fr/dp/" + book1ID,
+        "IN": "https://www.amazon.in/dp/" + book1ID,
+        "IT": "https://www.amazon.it/dp" + book1ID,
+        "JP": "https://www.amazon.co.jp/dp" + book1ID
+    };
+
+    const defaultURL = "https://www.amazon.com/dp/" + book1ID;
+
+    fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+            const countryCode = data.country || "US";
+            const redirectUrl = marketplaceUrls[countryCode] || defaultURL;
+            window.location.href = redirectUrl;
+        })
+        .catch(() => {
+            window.location.href = defaultURL;
+        });
+}
+
+function redirectToAuthor() {
+    const authorPageUrls = {
+        "US": "https://www.amazon.com/author/" + authorID,
+        "CA": "https://www.amazon.ca/author/" + authorID,
+        "UK": "https://www.amazon.co.uk/author/" + authorID,
+        "DE": "https://www.amazon.de/author/" + authorID,
+        "FR": "https://www.amazon.fr/author/" + authorID,
+        "IN": "https://www.amazon.in/author/" + authorID,
+        "IT": "https://www.amazon.it/author/" + authorID,
+        "JP": "https://www.amazon.co.jp/author/" + authorID,
+    };
+
+    const defaultUrl = "https://www.amazon.com/author/" + authorID;
+
+    fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+            const countryCode = data.country || "US";
+            const redirectUrl = authorPageUrls[countryCode] || defaultUrl;
+            window.location.href = redirectUrl;
+        })
+        .catch(() => {
+            window.location.href = defaultUrl;
+        });
+}
