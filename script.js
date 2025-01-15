@@ -1,6 +1,7 @@
 const starfield = document.getElementById("starfield");
 const authorID = 'sthshadowhart';
-const book1ID = 'B0DRF6FCWC';
+
+const bookID = ['B0DRF6FCWC', 'B0DSZH3PGC']
 
 function createStars() {
     const numberOfStars = 300; // Adjust the number of stars
@@ -67,7 +68,9 @@ navs.forEach(link => {
     });
 });
 
-function redirectToMarketplace() {
+function redirectToMarketplace(index) {
+    const book1ID = bookID[index];
+
     const marketplaceUrls = {
         "US": "https://www.amazon.com/dp/" + book1ID,
         "CA": "https://www.amazon.ca/dp/" + book1ID,
